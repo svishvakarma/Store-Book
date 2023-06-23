@@ -4,7 +4,7 @@ class BooksController < ApplicationController
   end
 
   def new 
-    @book = Book.new(book_params)
+    @book = Book.new
   end
 
   def create 
@@ -40,6 +40,6 @@ class BooksController < ApplicationController
   private
 
   def book_params
-    params.require(:book).permit(:name, :quantity_available, :ISBN, :price, :author_name)
+    params.require(:book).permit(:name, :price, :quantity_available, :author_name, :isbn)
   end
 end
