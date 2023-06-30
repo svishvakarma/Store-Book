@@ -104,6 +104,10 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    devise_token_auth (1.2.2)
+      bcrypt (~> 3.0)
+      devise (> 3.5.2, < 5)
+      rails (>= 4.2.0, < 7.1)
     erubi (1.12.0)
     ffi (1.15.5)
     formtastic (4.0.0)
@@ -278,6 +282,7 @@ DEPENDENCIES
   byebug
   capybara
   devise
+  devise_token_auth
   importmap-rails
   jbuilder
   pg (~> 1.1)

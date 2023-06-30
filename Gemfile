@@ -44,6 +44,9 @@ gem "bootsnap", require: false
 gem 'activeadmin'
 gem 'devise'
 gem 'sass-rails'
+gem 'devise'
+gem 'devise_token_auth'
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
