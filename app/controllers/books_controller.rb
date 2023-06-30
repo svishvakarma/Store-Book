@@ -1,6 +1,8 @@
 class BooksController < ApplicationController
+  before_action :authenticate_user!
   def index 
     @books = Book.all
+    render json: @books.as_json(only: [:id, :name, :isbn])
   end
 
   def new 
@@ -18,6 +20,7 @@ class BooksController < ApplicationController
 
   def show
     @book = Book.find(params[:id])
+    render json: @book
   end
 
   def edit
