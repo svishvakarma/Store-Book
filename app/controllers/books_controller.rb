@@ -3,8 +3,8 @@ class BooksController < ApplicationController
   before_action :admin_only, only: [:create, :update, :destroy]
   
   def index 
-  @books = Book.all
-  render json: @books.as_json(only: [:id, :name, :isbn])
+   @books = Book.all
+   render json: @books.as_json(only: [:id, :name, :isbn])
   end
   
   def new 
@@ -58,3 +58,4 @@ class BooksController < ApplicationController
     end
   end
 end
+

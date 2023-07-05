@@ -3,7 +3,6 @@ class RegistrationsController < DeviseTokenAuth::ApplicationController
   
   def create
     user = User.new(sign_up_params)
-
     if user.admin = params[:admin].to_s.downcase == 'true'
       byebug
       user.admin = true
@@ -26,3 +25,4 @@ class RegistrationsController < DeviseTokenAuth::ApplicationController
     params.permit(:name, :nickname, :email, :password, :password_confirmation)
   end
 end
+
