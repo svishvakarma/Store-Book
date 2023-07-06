@@ -3,8 +3,8 @@ class BooksController < ApplicationController
   before_action :admin_only, only: [:create, :update, :destroy]
   
   def index 
-  @books = Book.all
-  render json: @books.as_json(only: [:id, :name, :isbn, :stock_status], methods: [:stock_status])
+    @books = Book.all
+    render json: @books.as_json(only: [:id, :name, :isbn], methods: [:stock_status])
   end
   
   def new 
