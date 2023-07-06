@@ -4,15 +4,13 @@ class RegistrationsController < DeviseTokenAuth::ApplicationController
   def create
     user = User.new(sign_up_params)
     if user.admin = params[:admin].to_s.downcase == 'true'
-      byebug
       user.admin = true
     else
-      byebug
       user.admin = false
     end
 
     if user.save
-      render json: { email: user.email,admin: user.admin,
+      render json: { email: user.email,
                      message: 'Sign Up Successful' }, status: :ok
     else
       render json: { errors: user.errors.full_messages, status: :unprocessable_entity }
